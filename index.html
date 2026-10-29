@@ -38,9 +38,22 @@
         .logo-text h1 { font-size: 1.15rem; color: var(--primary-color); font-weight: 700; line-height: 1.2; }
         .logo-text p { font-size: 0.75rem; color: #64748b; font-weight: 500; }
 
-        .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; font-size: 0.9rem; cursor: pointer; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
-        .nav-links a:hover { color: var(--primary-color); }
+        <ul class="nav-links">
+    <!-- Tombol Beranda: Mengembalikan ke halaman atas secara mulus -->
+    <li><a onclick="tampilHalaman('publik'); window.scrollTo({top: 0, behavior: 'smooth'});"><i class="fa-solid fa-house"></i> Beranda</a></li>
+    
+    <!-- Tombol Materi: Menggulir otomatis ke bagian Pusat Layanan/Materi -->
+    <li><a onclick="bukaMateri()"><i class="fa-solid fa-book-open"></i> Materi</a></li>
+    
+    <!-- Tombol Masuk: Ubah href="#" dengan link halaman login atau Google Apps Script Anda -->
+    <li><a class="btn-masuk" href="https://script.google.com/macros/s/AKfycbzlvEbI2FcfRvu2sNACVhcExqLD_uXtO61koLsKd5zDnv-6wWpzVvEuLEfUTWqCNPyXzg/exec" target="_blank">Masuk</a></li>
+    
+    <!-- Tombol Daftar: Mengarah ke link Google Apps Script pendaftaran Anda -->
+    <li><a class="btn-daftar" href="https://script.google.com/macros/s/AKfycbzlvEbI2FcfRvu2sNACVhcExqLD_uXtO61koLsKd5zDnv-6wWpzVvEuLEfUTWqCNPyXzg/exec" target="_blank">Daftar</a></li>
+    
+    <!-- Tombol Admin -->
+    <li><a onclick="bukaAdmin()" class="btn-admin"><i class="fa-solid fa-lock"></i> Admin</a></li>
+</ul>
         
         .btn-masuk { background: #eff6ff; color: var(--primary-color) !important; padding: 0.5rem 1.25rem; border-radius: 20px; font-weight: 600; }
         .btn-daftar { background: var(--primary-color); color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 20px; font-weight: 600; }
@@ -163,7 +176,7 @@
             <li><a onclick="tampilHalaman('publik'); window.scrollTo({top: 0, behavior: 'smooth'});"><i class="fa-solid fa-house"></i> Beranda</a></li>
             <li><a onclick="bukaMateri()"><i class="fa-solid fa-book-open"></i> Materi</a></li>
             <li><a class="btn-masuk" href="#">Masuk</a></li>
-            <li><a class="btn-daftar" href="#">Daftar</a></li>
+            <li><a class="btn-daftar" href="https://script.google.com/macros/s/AKfycbzlvEbI2FcfRvu2sNACVhcExqLD_uXtO61koLsKd5zDnv-6wWpzVvEuLEfUTWqCNPyXzg/exec" target="_blank">Daftar</a></li>
             <li><a onclick="bukaAdmin()" class="btn-admin"><i class="fa-solid fa-lock"></i> Admin</a></li>
         </ul>
     </header>
