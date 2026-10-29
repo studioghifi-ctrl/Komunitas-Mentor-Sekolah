@@ -172,12 +172,17 @@
             </div>
         </div>
         <ul class="nav-links">
-            <li><a onclick="tampilHalaman('publik'); window.scrollTo({top: 0, behavior: 'smooth'});"><i class="fa-solid fa-house"></i> Beranda</a></li>
-            <li><a onclick="bukaMateri()"><i class="fa-solid fa-book-open"></i> Materi</a></li>
-            <li><a class="btn-masuk" href="https://script.google.com/macros/s/AKfycbzBgF1peEUcNr0MNYiOvQzr9XPXv5QxPkLWpar9AzBvoh8XCbhXloipHDOF2u3Uun3suw/exec" target="_blank">Masuk</a></li>
-            <li><a class="btn-daftar" href="https://script.google.com/macros/s/AKfycbzBgF1peEUcNr0MNYiOvQzr9XPXv5QxPkLWpar9AzBvoh8XCbhXloipHDOF2u3Uun3suw/exec" target="_blank">Daftar</a></li>
-            <li><a onclick="bukaAdmin()" class="btn-admin"><i class="fa-solid fa-lock"></i> Admin</a></li>
-        </ul>
+    <li><a href="https://studioghifi-ctrl.github.io/Komunitas-Mentor-Sekolah/"><i class="fa-solid fa-house"></i> Beranda</a></li>
+    <li><a onclick="bukaMateri()"><i class="fa-solid fa-book-open"></i> Materi</a></li>
+    
+    <!-- Arahkan langsung ke Google Apps Script halaman login -->
+    <li><a class="btn-masuk" href="URL_WEB_APP_ANDA_DISINI?page=login" target="_blank">Masuk</a></li>
+    
+    <!-- Arahkan langsung ke Google Apps Script halaman register -->
+    <li><a class="btn-daftar" href="URL_WEB_APP_ANDA_DISINI?page=register" target="_blank">Daftar</a></li>
+    
+    <li><a onclick="tunjukHalaman('admin')" class="btn-admin"><i class="fa-solid fa-lock"></i> Admin</a></li>
+</ul>
     </header>
 
     <!-- HALAMAN PUBLIK -->
