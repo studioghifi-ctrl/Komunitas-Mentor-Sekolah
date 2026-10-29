@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="meta-title">Portal Resmi & Blog Mentor Sekolah</title>
+    <title id="meta-title">Komunitas Mentor Sekolah | Berbagi Ilmu, Tumbuh Bersama</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #3b82f6;
+            --primary-color: #0b57d0;
+            --secondary-color: #1d4ed8;
             --accent-color: #f59e0b;
             --bg-color: #f8fafc;
-            --text-color: #334155;
+            --text-color: #1e293b;
             --white: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
 
+        /* Header & Navigasi Modern */
         header {
             background: var(--white);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 0.75rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -32,172 +33,257 @@
             z-index: 1000;
         }
 
-        .logo-area { display: flex; align-items: center; gap: 14px; }
-        .logo-icon { font-size: 2rem; color: var(--primary-color); background: #eff6ff; padding: 10px 14px; border-radius: 12px; }
-        .logo-text h1 { font-size: 1.2rem; color: var(--primary-color); font-weight: 700; }
-        .logo-text p { font-size: 0.8rem; color: #64748b; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-img { width: 45px; height: 45px; object-fit: contain; border-radius: 50%; background: #eff6ff; padding: 2px; }
+        .logo-text h1 { font-size: 1.15rem; color: var(--primary-color); font-weight: 700; line-height: 1.2; }
+        .logo-text p { font-size: 0.75rem; color: #64748b; font-weight: 500; }
 
         .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; font-size: 0.95rem; cursor: pointer; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--secondary-color); }
-        .btn-admin { background: var(--primary-color); color: var(--white) !important; padding: 0.5rem 1rem; border-radius: 6px; }
+        .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; font-size: 0.9rem; cursor: pointer; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
+        .nav-links a:hover { color: var(--primary-color); }
+        
+        .btn-masuk { background: #eff6ff; color: var(--primary-color) !important; padding: 0.5rem 1.25rem; border-radius: 20px; font-weight: 600; }
+        .btn-daftar { background: var(--primary-color); color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 20px; font-weight: 600; }
+        .btn-admin { background: #334155; color: var(--white) !important; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; }
 
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
+            background: linear-gradient(135deg, #e0f2fe, #f0fdf4);
             padding: 4rem 2rem;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .hero h2 { font-size: 2.2rem; margin-bottom: 1rem; font-weight: 700; }
-        .hero p { font-size: 1.05rem; opacity: 0.95; max-width: 700px; margin: 0 auto; }
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .hero-content h2 { font-size: 2.5rem; color: #0f172a; margin-bottom: 1rem; font-weight: 800; line-height: 1.2; }
+        .hero-content p { font-size: 1.05rem; color: #475569; margin-bottom: 2rem; }
+        
+        .hero-badges { display: flex; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .badge-item { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; color: #334155; }
+        .badge-item i { color: var(--primary-color); }
 
-        .container { max-width: 1200px; margin: 3rem auto; padding: 0 2rem; }
-        .section-title { margin-bottom: 2rem; border-left: 4px solid var(--secondary-color); padding-left: 1rem; }
-        .section-title h3 { font-size: 1.75rem; color: var(--primary-color); }
+        .btn-primary-hero {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.85rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(11, 87, 208, 0.3);
+            transition: transform 0.2s;
+        }
+        .btn-primary-hero:hover { transform: translateY(-2px); }
 
+        .hero-image-box img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            object-fit: cover;
+        }
+
+        /* Container Utama */
+        .container { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+        .section-title { margin-bottom: 2.5rem; text-align: center; }
+        .section-title h3 { font-size: 2rem; color: #0f172a; font-weight: 700; }
+
+        /* Grid Kartu Layanan */
+        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #f1f5f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.06); }
+        .service-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            background: #eff6ff;
+            width: 60px; height: 60px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+        .service-title { font-size: 1.25rem; color: #0f172a; margin-bottom: 0.75rem; font-weight: 700; }
+        .service-desc { font-size: 0.95rem; color: #64748b; margin-bottom: 1.5rem; }
+        .service-link { text-decoration: none; color: var(--primary-color); font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 6px; }
+
+        /* Grid Berita */
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
-        .blog-card { background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.04); border: 1px solid #f1f5f9; position: relative; }
+        .blog-card { background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; }
         .blog-date { font-size: 0.85rem; color: var(--accent-color); font-weight: 600; margin-bottom: 0.5rem; display: block; }
-        .blog-title { font-size: 1.25rem; color: var(--primary-color); margin-bottom: 0.75rem; font-weight: 600; }
+        .blog-title { font-size: 1.25rem; color: #0f172a; margin-bottom: 0.75rem; font-weight: 700; }
         .blog-desc { font-size: 0.95rem; color: #64748b; white-space: pre-line; }
 
-        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .service-card { background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.04); text-align: center; border: 1px solid #f1f5f9; }
-        .service-icon { font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 1rem; }
-        .service-title { font-size: 1.2rem; color: var(--primary-color); margin-bottom: 0.5rem; font-weight: 600; }
-        .service-desc { font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem; }
-        .btn-service { background: var(--secondary-color); color: var(--white); padding: 0.6rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block; }
-        .btn-service:hover { background: var(--primary-color); }
-
         /* Panel Admin */
-        .admin-panel-wrapper { max-width: 700px; margin: 2rem auto; background: var(--white); padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .admin-panel-wrapper { max-width: 750px; margin: 3rem auto; background: var(--white); padding: 3rem; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
         .form-group { margin-bottom: 1.25rem; }
-        label { display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem; }
-        input, select, textarea { width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; outline: none; }
-        textarea { resize: vertical; height: 120px; }
-        .btn-submit { background: var(--secondary-color); color: var(--white); border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1rem; margin-top: 0.5rem; }
-        .btn-submit:hover { background: var(--primary-color); }
-        .admin-section-divider { margin: 2rem 0; border-top: 2px dashed #e2e8f0; padding-top: 1.5rem; }
+        label { display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem; color: #334155; }
+        input, select, textarea { width: 100%; padding: 0.85rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; outline: none; }
+        input:focus, select:focus, textarea:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(11,87,208,0.1); }
+        textarea { resize: vertical; height: 100px; }
+        .btn-submit { background: var(--primary-color); color: var(--white); border: none; padding: 0.85rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; font-size: 1rem; margin-top: 0.5rem; transition: background 0.3s; }
+        .btn-submit:hover { background: #0945a5; }
+        .admin-divider { margin: 2rem 0; border-top: 2px dashed #e2e8f0; padding-top: 1.5rem; }
 
-        footer { background: #0f172a; color: var(--white); text-align: center; padding: 2rem; margin-top: 4rem; }
+        /* Footer */
+        footer { background: #0b1329; color: var(--white); padding: 3rem 2rem; text-align: center; }
         footer p { font-size: 0.9rem; opacity: 0.8; }
+        
+        @media(max-width: 768px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Header & Navigasi -->
     <header>
         <div class="logo-area">
-            <div class="logo-icon"><i class="fa-solid fa-school"></i></div>
+            <img id="brand-logo" src="https://cdn.phototourl.com/member/2026-10-29-2a257f57-4de6-48f2-9b09-5f500a97bc0b.jpg" alt="Logo" class="logo-img">
             <div class="logo-text">
-                <h1 id="brand-title">Mentor Sekolah</h1>
-                <p id="brand-subtitle">Kabupaten Aceh Timur</p>
+                <h1 id="brand-title">Komunitas Mentor Sekolah</h1>
+                <p id="brand-subtitle">Berbagi Ilmu, Tumbuh Bersama</p>
             </div>
         </div>
         <ul class="nav-links">
-            <li><a onclick="tampilHalaman('publik')">Beranda</a></li>
-            <li><a onclick="tampilHalaman('publik')">Layanan</a></li>
-            <li><a onclick="bukaAdmin()" class="btn-admin"><i class="fa-solid fa-lock"></i> Login Admin</a></li>
+            <li><a onclick="tampilHalaman('publik'); window.scrollTo({top: 0, behavior: 'smooth'});"><i class="fa-solid fa-house"></i> Beranda</a></li>
+            <li><a onclick="bukaMateri()"><i class="fa-solid fa-book-open"></i> Materi</a></li>
+            <li><a class="btn-masuk" href="#">Masuk</a></li>
+            <li><a class="btn-daftar" href="#">Daftar</a></li>
+            <li><a onclick="bukaAdmin()" class="btn-admin"><i class="fa-solid fa-lock"></i> Admin</a></li>
         </ul>
     </header>
 
     <!-- HALAMAN PUBLIK -->
     <div id="halaman-publik">
+        <!-- Hero Section -->
         <section class="hero">
-            <h2 id="hero-title">Portal Digital Terpadu Mentor Sekolah</h2>
-            <p id="hero-desc">Pusat informasi resmi sekolah, publikasi artikel kegiatan, dan direktori layanan pembelajaran digital.</p>
-        </section>
-
-        <div class="container">
-            <!-- Bagian Berita / Artikel Dinamis -->
-            <div id="berita">
-                <div class="section-title">
-                    <h3>Berita & Informasi Terbaru</h3>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h2 id="hero-title">Bersama Menjadi Guru Hebat di Era Digital</h2>
+                    <p id="hero-desc">Komunitas Mentor Sekolah adalah wadah pembelajaran bagi guru, pusat perkembangan pembelajaran di era digital, serta ruang berbagi, curhat, dan perjuangan bersama untuk hak dan kemajuan pendidikan.</p>
+                    <div class="hero-badges">
+                        <div class="badge-item"><i class="fa-solid fa-circle-check"></i> Belajar Bersama</div>
+                        <div class="badge-item"><i class="fa-solid fa-circle-check"></i> Berbagi Pengalaman</div>
+                        <div class="badge-item"><i class="fa-solid fa-circle-check"></i> Majukan Pendidikan</div>
+                    </div>
+                    <a href="#layanan" class="btn-primary-hero">Gabung Sekarang <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div class="blog-grid" id="container-berita">
-                    <p>Memuat berita...</p>
+                <div class="hero-image-box">
+                    <img id="hero-img-display" src="https://cdn.phototourl.com/member/2026-10-29-24070802-6173-4fc6-8376-e5836e8e749d.png" alt="Ilustrasi Guru">
                 </div>
             </div>
+        </section>
 
-            <!-- Pusat Layanan Digital (Dinamis) -->
-            <div id="layanan" style="margin-top: 4rem;">
-                <div class="section-title">
-                    <h3>Pusat Layanan & Pembelajaran</h3>
-                </div>
-                <div class="grid-services" id="container-layanan">
-                    <!-- Layanan dimuat via JS -->
-                </div>
+        <!-- Bagian Layanan & Fitur -->
+        <div class="container" id="layanan">
+            <div class="section-title">
+                <h3>Pusat Layanan & Pembelajaran</h3>
+            </div>
+            <div class="grid-services" id="container-layanan">
+                <!-- Layanan dirender via JavaScript -->
+            </div>
+
+            <!-- Bagian Berita / Artikel -->
+            <div class="section-title" style="margin-top: 5rem;">
+                <h3>Berita & Informasi Terbaru</h3>
+            </div>
+            <div class="blog-grid" id="container-berita">
+                <p>Memuat berita...</p>
             </div>
         </div>
     </div>
 
-    <!-- HALAMAN ADMIN -->
+    <!-- HALAMAN DASHBOARD ADMIN -->
     <div id="halaman-admin" style="display:none;" class="container">
         <!-- Kotak Login -->
         <div class="admin-panel-wrapper" id="login-box">
             <h2><i class="fa-solid fa-lock"></i> Login Admin</h2>
-            <div class="form-group">
+            <div class="form-group" style="margin-top: 1.5rem;">
                 <label>Masukkan Kata Sandi Admin</label>
-                <input type="password" id="password" placeholder="Password (contoh: admin123)">
+                <input type="password" id="password" placeholder="Password (default: admin123)">
             </div>
             <button class="btn-submit" onclick="cekLogin()">Masuk Dashboard</button>
             <br><br>
-            <a onclick="tampilHalaman('publik')" style="color:var(--secondary-color); cursor:pointer;">&larr; Kembali ke Beranda Utama</a>
+            <a onclick="tampilHalaman('publik')" style="color:var(--primary-color); cursor:pointer; font-weight:600;">&larr; Kembali ke Beranda Utama</a>
         </div>
 
-        <!-- Dashboard Admin (Ubah Judul, Layanan, & Tulis Berita) -->
+        <!-- Dashboard Kontrol Penuh -->
         <div class="admin-panel-wrapper" id="form-box" style="display:none;">
-            <h2><i class="fa-solid fa-gauge-high"></i> Dashboard Admin Website</h2>
+            <h2><i class="fa-solid fa-gauge-high"></i> Dashboard Kontrol Admin</h2>
+            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 2rem;">Ubah teks, logo, gambar banner, kelola kartu layanan, dan terbitkan berita.</p>
             
-            <!-- Pengaturan Tampilan & Judul -->
+            <!-- Pengaturan Judul, Logo & Banner -->
             <div class="form-group">
-                <label>Nama / Judul Sekolah (Header)</label>
-                <input type="text" id="setting-title" placeholder="Mentor Sekolah">
+                <label>URL Gambar Logo Header</label>
+                <input type="text" id="setting-logo" placeholder="https://.../logo.jpg">
             </div>
             <div class="form-group">
-                <label>Sub-judul / Kabupaten</label>
-                <input type="text" id="setting-subtitle" placeholder="Kabupaten Aceh Timur">
+                <label>URL Gambar Banner Utama (Hero Image)</label>
+                <input type="text" id="setting-hero-img" placeholder="https://.../banner.png">
+            </div>
+            <div class="form-group">
+                <label>Nama Komunitas / Sekolah (Header)</label>
+                <input type="text" id="setting-title" placeholder="Komunitas Mentor Sekolah">
+            </div>
+            <div class="form-group">
+                <label>Sub-judul Header</label>
+                <input type="text" id="setting-subtitle" placeholder="Berbagi Ilmu, Tumbuh Bersama">
             </div>
             <div class="form-group">
                 <label>Judul Utama Banner (Hero Title)</label>
-                <input type="text" id="setting-hero-title" placeholder="Portal Digital Terpadu...">
+                <input type="text" id="setting-hero-title" placeholder="Bersama Menjadi Guru Hebat...">
             </div>
             <div class="form-group">
                 <label>Deskripsi Banner (Hero Desc)</label>
-                <textarea id="setting-hero-desc" style="height: 80px;"></textarea>
+                <textarea id="setting-hero-desc"></textarea>
             </div>
-            <button class="btn-submit" onclick="simpanPengaturan()">Simpan Perubahan Tampilan</button>
+            <button class="btn-submit" onclick="simpanPengaturan()">Simpan Perubahan Tampilan & Gambar</button>
 
-            <div class="admin-section-divider"></div>
+            <div class="admin-divider"></div>
 
-            <!-- Kelola Pusat Layanan -->
-            <h3><i class="fa-solid fa-th-large"></i> Kelola Kartu Pusat Layanan</h3>
-            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">Tambah atau edit akses layanan cepat yang tampil di beranda.</p>
-            <div class="form-group">
+            <!-- Kelola Kartu Layanan -->
+            <h3><i class="fa-solid fa-th-large"></i> Kelola Kartu Layanan & Fitur</h3>
+            <div class="form-group" style="margin-top: 1rem;">
                 <label>Nama Layanan</label>
-                <input type="text" id="serv-title" placeholder="Contoh: LMS PAI Kelas 1 - 6">
+                <input type="text" id="serv-title" placeholder="Contoh: Materi Pembelajaran">
             </div>
             <div class="form-group">
                 <label>Deskripsi Layanan</label>
-                <input type="text" id="serv-desc" placeholder="Platform pembelajaran digital...">
+                <input type="text" id="serv-desc" placeholder="Akses modul dan video...">
             </div>
             <div class="form-group">
-                <label>Tautan URL Layanan</label>
+                <label>URL / Tautan Tujuan</label>
                 <input type="text" id="serv-url" placeholder="https://...">
             </div>
             <div class="form-group">
-                <label>Ikon FontAwesome (Contoh: fa-book, fa-calendar)</label>
-                <input type="text" id="serv-icon" placeholder="fa-book-open-reader">
+                <label>Ikon FontAwesome (Contoh: fa-book, fa-comments)</label>
+                <input type="text" id="serv-icon" placeholder="fa-book-open">
             </div>
-            <button class="btn-submit" style="background:var(--primary-color);" onclick="tambahLayanan()">Tambah Kartu Layanan Baru</button>
-            <div id="list-layanan-admin" style="margin-top: 1rem;"></div>
+            <button class="btn-submit" style="background:#0f172a;" onclick="tambahLayanan()">Tambah Kartu Layanan Baru</button>
+            <div id="list-layanan-admin" style="margin-top: 1.2rem;"></div>
 
-            <div class="admin-section-divider"></div>
+            <div class="admin-divider"></div>
 
             <!-- Tulis Berita -->
             <h3><i class="fa-solid fa-pen-to-square"></i> Tulis Berita / Artikel Baru</h3>
             <div class="form-group" style="margin-top: 1rem;">
                 <label>Judul Berita</label>
-                <input type="text" id="news-judul" placeholder="Contoh: Kegiatan Latihan FLS3N">
+                <input type="text" id="news-judul" placeholder="Contoh: GEMA LITERASI Sekolah">
             </div>
             <div class="form-group">
                 <label>Kategori</label>
@@ -210,31 +296,32 @@
             </div>
             <div class="form-group">
                 <label>Isi Berita / Artikel</label>
-                <textarea id="news-konten" placeholder="Tulis isi berita atau informasi di sini..."></textarea>
+                <textarea id="news-konten" placeholder="Tulis isi artikel di sini..."></textarea>
             </div>
             <button class="btn-submit" onclick="terbitkanBerita()">Terbitkan Berita</button>
             
             <br><br>
-            <a onclick="tampilHalaman('publik')" style="color:var(--secondary-color); cursor:pointer; font-weight:600;">&larr; Selesai / Lihat Website Publik</a>
+            <a onclick="tampilHalaman('publik')" style="color:var(--primary-color); cursor:pointer; font-weight:600;">&larr; Selesai / Lihat Website Publik</a>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p id="footer-text">&copy; 2026 Mentor Sekolah, Aceh Timur. Dikembangkan untuk mendukung kemajuan pendidikan digital.</p>
+        <p id="footer-text">&copy; 2026 Komunitas Mentor Sekolah • Karena Guru adalah Kunci Perubahan</p>
     </footer>
 
     <script>
-        // Password Admin (Dapat diubah di sini)
         const ADMIN_PASSWORD = "admin123";
 
-        // Data Default Layanan
         const defaultLayanan = [
-            { title: "LMS PAI Kelas 1 - 6", desc: "Platform pembelajaran digital interaktif untuk materi dan evaluasi PAI.", url: "https://erlitaronaputra-code.github.io/direktori-web/", icon: "fa-book-open-reader" },
-            { title: "Presensi & Jurnal Harian", desc: "Pencatatan kehadiran siswa dan agenda kegiatan mengajar guru secara real-time.", url: "https://erlitaronaputra-code.github.io/direktori-web/", icon: "fa-clipboard-user" },
-            { title: "Agenda & Papan Informasi", desc: "Jadwal piket, kegiatan pramuka, latihan FLS3N, dan kalender akademik sekolah.", url: "https://erlitaronaputra-code.github.io/direktori-web/", icon: "fa-calendar-days" }
+            { title: "Materi Pembelajaran", desc: "Akses modul, video, dan sumber belajar berkualitas dari para mentor.", url: "#", icon: "fa-book-open" },
+            { title: "Forum Diskusi", desc: "Tukar pikiran, berbagi ide, dan temukan solusi bersama rekan guru.", url: "#", icon: "fa-users-rectangle" },
+            { title: "Mentor Profesional", desc: "Dapatkan bimbingan dari mentor berpengalaman di bidangnya.", url: "#", icon: "fa-chalkboard-user" },
+            { title: "Pelatihan Digital", desc: "Tingkatkan kompetensi dengan pelatihan daring & luring.", url: "#", icon: "fa-laptop-code" },
+            { title: "Ruang Curhat Guru", desc: "Cerita, dengar, dan saling menguatkan. Karena guru dan manusia juga.", url: "#", icon: "fa-heart-pulse" },
+            { title: "Advokasi & Perjuangan", desc: "Bersama memperjuangkan hak guru dan kemajuan pendidikan.", url: "#", icon: "fa-shield-halved" }
         ];
 
-        // Data Default Berita
         const defaultBerita = [
             { tanggal: "14/10/2026", kategori: "Kegiatan Sekolah", judul: "GEMA LITERASI: Menumbuhkan Cinta Membaca", konten: "Suasana meriah dan penuh semangat tampak menyelimuti halaman utama sekolah pada pagi hari ini..." }
         ];
@@ -258,6 +345,14 @@
             }
         }
 
+        function bukaMateri() {
+            tampilHalaman('publik');
+            const elemenLayanan = document.getElementById('layanan');
+            if(elemenLayanan) {
+                elemenLayanan.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
         function bukaAdmin() {
             tampilHalaman('admin');
             document.getElementById('login-box').style.display = 'block';
@@ -277,34 +372,41 @@
             }
         }
 
-        // --- PENGATURAN / JUDUL ---
         function muatKonfigurasi() {
             let config = JSON.parse(localStorage.getItem('site_config')) || {
-                title: "Mentor Sekolah",
-                subtitle: "Kabupaten Aceh Timur",
-                heroTitle: "Portal Digital Terpadu Mentor Sekolah",
-                heroDesc: "Pusat informasi resmi sekolah, publikasi artikel kegiatan, dan direktori layanan pembelajaran digital."
+                title: "Komunitas Mentor Sekolah",
+                subtitle: "Berbagi Ilmu, Tumbuh Bersama",
+                heroTitle: "Bersama Menjadi Guru Hebat di Era Digital",
+                heroDesc: "Komunitas Mentor Sekolah adalah wadah pembelajaran bagi guru, pusat perkembangan pembelajaran di era digital, serta ruang berbagi, curhat, dan perjuangan bersama untuk hak dan kemajuan pendidikan.",
+                logoUrl: "https://cdn.phototourl.com/member/2026-10-29-2a257f57-4de6-48f2-9b09-5f500a97bc0b.jpg",
+                heroImgUrl: "https://cdn.phototourl.com/member/2026-10-29-24070802-6173-4fc6-8376-e5836e8e749d.png"
             };
 
-            document.getElementById('meta-title').innerText = config.title;
+            document.getElementById('meta-title').innerText = config.title + " | " + config.subtitle;
             document.getElementById('brand-title').innerText = config.title;
             document.getElementById('brand-subtitle').innerText = config.subtitle;
             document.getElementById('hero-title').innerText = config.heroTitle;
             document.getElementById('hero-desc').innerText = config.heroDesc;
-            document.getElementById('footer-text').innerHTML = `&copy; 2026 ${config.title}, ${config.subtitle}. Dikembangkan untuk mendukung kemajuan pendidikan digital.`;
+            document.getElementById('brand-logo').src = config.logoUrl;
+            document.getElementById('hero-img-display').src = config.heroImgUrl;
+            document.getElementById('footer-text').innerHTML = `&copy; 2026 ${config.title} • Karena Guru adalah Kunci Perubahan`;
         }
 
         function isiFormPengaturan() {
             let config = JSON.parse(localStorage.getItem('site_config')) || {
-                title: "Mentor Sekolah",
-                subtitle: "Kabupaten Aceh Timur",
-                heroTitle: "Portal Digital Terpadu Mentor Sekolah",
-                heroDesc: "Pusat informasi resmi sekolah, publikasi artikel kegiatan, dan direktori layanan pembelajaran digital."
+                title: "Komunitas Mentor Sekolah",
+                subtitle: "Berbagi Ilmu, Tumbuh Bersama",
+                heroTitle: "Bersama Menjadi Guru Hebat di Era Digital",
+                heroDesc: "Komunitas Mentor Sekolah adalah wadah pembelajaran bagi guru...",
+                logoUrl: "https://cdn.phototourl.com/member/2026-10-29-2a257f57-4de6-48f2-9b09-5f500a97bc0b.jpg",
+                heroImgUrl: "https://cdn.phototourl.com/member/2026-10-29-24070802-6173-4fc6-8376-e5836e8e749d.png"
             };
             document.getElementById('setting-title').value = config.title;
             document.getElementById('setting-subtitle').value = config.subtitle;
             document.getElementById('setting-hero-title').value = config.heroTitle;
             document.getElementById('setting-hero-desc').value = config.heroDesc;
+            document.getElementById('setting-logo').value = config.logoUrl;
+            document.getElementById('setting-hero-img').value = config.heroImgUrl;
         }
 
         function simpanPengaturan() {
@@ -312,14 +414,15 @@
                 title: document.getElementById('setting-title').value,
                 subtitle: document.getElementById('setting-subtitle').value,
                 heroTitle: document.getElementById('setting-hero-title').value,
-                heroDesc: document.getElementById('setting-hero-desc').value
+                heroDesc: document.getElementById('setting-hero-desc').value,
+                logoUrl: document.getElementById('setting-logo').value,
+                heroImgUrl: document.getElementById('setting-hero-img').value
             };
             localStorage.setItem('site_config', JSON.stringify(config));
-            alert('Pengaturan tampilan dan judul berhasil disimpan!');
+            alert('Pengaturan tampilan, judul, dan gambar berhasil disimpan!');
             muatKonfigurasi();
         }
 
-        // --- PUSAT LAYANAN ---
         function muatLayanan() {
             let layanan = JSON.parse(localStorage.getItem('site_layanan')) || defaultLayanan;
             let container = document.getElementById('container-layanan');
@@ -330,7 +433,7 @@
                         <div class="service-icon"><i class="fa-solid ${item.icon}"></i></div>
                         <h4 class="service-title">${item.title}</h4>
                         <p class="service-desc">${item.desc}</p>
-                        <a href="${item.url}" class="btn-service" target="_blank">Buka Layanan &rarr;</a>
+                        <a href="${item.url}" class="service-link" target="_blank">Akses Layanan &rarr;</a>
                     </div>
                 `;
             });
@@ -340,12 +443,12 @@
         function muatLayananAdmin() {
             let layanan = JSON.parse(localStorage.getItem('site_layanan')) || defaultLayanan;
             let container = document.getElementById('list-layanan-admin');
-            let html = '<p style="font-weight:600; margin-bottom:5px;">Daftar Layanan Aktif:</p>';
+            let html = '<p style="font-weight:600; margin-bottom:8px;">Daftar Layanan Aktif:</p>';
             layanan.forEach((item, index) => {
                 html += `
-                    <div style="background:#f1f5f9; padding:10px; border-radius:6px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center;">
+                    <div style="background:#f1f5f9; padding:10px 14px; border-radius:6px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center;">
                         <span><b>${item.title}</b></span>
-                        <button onclick="hapusLayanan(${index})" style="background:#ef4444; color:white; border:none; padding:4px 8px; border-radius:4px; cursor:pointer;">Hapus</button>
+                        <button onclick="hapusLayanan(${index})" style="background:#ef4444; color:white; border:none; padding:4px 10px; border-radius:4px; cursor:pointer; font-size:0.85rem;">Hapus</button>
                     </div>
                 `;
             });
@@ -383,7 +486,6 @@
             muatLayananAdmin();
         }
 
-        // --- BERITA ---
         function muatBerita() {
             let berita = JSON.parse(localStorage.getItem('site_berita')) || defaultBerita;
             let container = document.getElementById('container-berita');
