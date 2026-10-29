@@ -38,23 +38,10 @@
         .logo-text h1 { font-size: 1.15rem; color: var(--primary-color); font-weight: 700; line-height: 1.2; }
         .logo-text p { font-size: 0.75rem; color: #64748b; font-weight: 500; }
 
-        <ul class="nav-links">
-    <li><a onclick="tampilHalaman('publik'); window.scrollTo({top: 0, behavior: 'smooth'});"><i class="fa-solid fa-house"></i> Beranda</a></li>
-    <li><a onclick="bukaMateri()"><i class="fa-solid fa-book-open"></i> Materi</a></li>
-    <li><a class="btn-masuk" href="#">Masuk</a></li>
-    <li><a class="btn-daftar" href="#">Daftar</a></li>
-    <li><a onclick="bukaAdmin()" class="btn-admin"><i class="fa-solid fa-lock"></i> Admin</a></li>
-</ul>
-        function bukaMateri() {
-    // Pastikan halaman publik aktif
-    tampilHalaman('publik');
-    
-    // Otomatis menggulir layar dengan halus ke bagian pusat layanan/materi
-    const elemenLayanan = document.getElementById('layanan');
-    if(elemenLayanan) {
-        elemenLayanan.scrollIntoView({ behavior: 'smooth' });
-    }
-}
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; font-size: 0.9rem; cursor: pointer; transition: color 0.3s; display: flex; align-items: center; gap: 6px; }
+        .nav-links a:hover { color: var(--primary-color); }
+        
         .btn-masuk { background: #eff6ff; color: var(--primary-color) !important; padding: 0.5rem 1.25rem; border-radius: 20px; font-weight: 600; }
         .btn-daftar { background: var(--primary-color); color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 20px; font-weight: 600; }
         .btn-admin { background: #334155; color: var(--white) !important; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; }
@@ -173,10 +160,10 @@
             </div>
         </div>
         <ul class="nav-links">
-            <li><a onclick="tampilHalaman('publik')"><i class="fa-solid fa-house"></i> Beranda</a></li>
-            <li><a onclick="tampilHalaman('publik')"><i class="fa-solid fa-book-open"></i> Materi</a></li>
+            <li><a onclick="tampilHalaman('publik'); window.scrollTo({top: 0, behavior: 'smooth'});"><i class="fa-solid fa-house"></i> Beranda</a></li>
+            <li><a onclick="bukaMateri()"><i class="fa-solid fa-book-open"></i> Materi</a></li>
             <li><a class="btn-masuk" href="#">Masuk</a></li>
-            <li><a class="btn-daftar" href="https://script.google.com/macros/s/AKfycbzlvEbI2FcfRvu2sNACVhcExqLD_uXtO61koLsKd5zDnv-6wWpzVvEuLEfUTWqCNPyXzg/exec">Daftar</a></li>
+            <li><a class="btn-daftar" href="#">Daftar</a></li>
             <li><a onclick="bukaAdmin()" class="btn-admin"><i class="fa-solid fa-lock"></i> Admin</a></li>
         </ul>
     </header>
@@ -228,7 +215,7 @@
             <h2><i class="fa-solid fa-lock"></i> Login Admin</h2>
             <div class="form-group" style="margin-top: 1.5rem;">
                 <label>Masukkan Kata Sandi Admin</label>
-                <input type="password" id="password" placeholder="Password (default: Masukkan Password)">
+                <input type="password" id="password" placeholder="Password (default: admin123)">
             </div>
             <button class="btn-submit" onclick="cekLogin()">Masuk Dashboard</button>
             <br><br>
@@ -324,7 +311,7 @@
     </footer>
 
     <script>
-        const ADMIN_PASSWORD = "14061985";
+        const ADMIN_PASSWORD = "admin123";
 
         const defaultLayanan = [
             { title: "Materi Pembelajaran", desc: "Akses modul, video, dan sumber belajar berkualitas dari para mentor.", url: "#", icon: "fa-book-open" },
@@ -355,6 +342,14 @@
             } else if(target === 'admin') {
                 document.getElementById('halaman-publik').style.display = 'none';
                 document.getElementById('halaman-admin').style.display = 'block';
+            }
+        }
+
+        function bukaMateri() {
+            tampilHalaman('publik');
+            const elemenLayanan = document.getElementById('layanan');
+            if(elemenLayanan) {
+                elemenLayanan.scrollIntoView({ behavior: 'smooth' });
             }
         }
 
